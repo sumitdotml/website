@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Website for my blog
 
-## Getting Started
-
-First, run the development server:
+## Installations
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npx create-next-app@latest
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```bash
+npm install framer-motion
+npm install next-themes
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## TODO
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- [ ] add metadata tags to individual sections (currently only the blog page has it)
+- [ ] add the learnings page with the books subdirectory with mdx (later)
 
-## Learn More
+## References
 
-To learn more about Next.js, take a look at the following resources:
+Tools used: React, Next.js, Tailwind, TypeScript.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Some components inside the [src/app/components/ui](src/app/styles/components/ui) are from [shadcn/ui](https://ui.shadcn.com/docs/):
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [Breadcrumb](https://ui.shadcn.com/docs/components/breadcrumb)
+- [Button](https://ui.shadcn.com/docs/components/button)
+- [Navigation Menu](https://ui.shadcn.com/docs/components/navigation-menu)
+- [Accordion](https://ui.shadcn.com/docs/components/accordion)
+- [Separator](https://ui.shadcn.com/docs/components/separator)
+- [Hover Card](https://ui.shadcn.com/docs/components/hover-card)

@@ -1,0 +1,6 @@
+.bg-dot-pattern {
+    background-color: transparent;
+    background-image: radial-gradient(rgba(139, 92, 246, 0.1) 1px, transparent 1px);
+    background-size: 25px 25px;
+    background-position: -19px -19px;
+} 
