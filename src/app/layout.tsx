@@ -29,6 +29,7 @@ export default function RootLayout({
             <div className="flex-1 flex flex-col">
               <main className="container mx-auto mt-4 px-4 flex-1">
                 {children}
+		<Analytics />
               </main>
             </div>
           </div>
