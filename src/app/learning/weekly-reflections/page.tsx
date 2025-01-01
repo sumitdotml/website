@@ -30,7 +30,7 @@ export default function WeeklyReflections() {
                     Weekly Reflections
                 </TextHeading>
                     <Text variant="muted" className="mb-8">
-                        A collection of my weekly reflections.
+                        My attempt at documenting, reflecting on, and being grateful for what I learned each week in my pursuit of knowledge.
                     </Text>
 
                 <StackVertical gap="md">

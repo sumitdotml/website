@@ -10,38 +10,38 @@ export async function generateStaticParams() {
     }))
 }
 
-// export async function generateMetadata({ params }: { params: Params }) {
-//     const { slug } = await params
+export async function generateMetadata({ params }: { params: Params }) {
+    const { slug } = await params
   
-//     return {
-//       title: `${references.find(post => post.slug === slug)?.title} | sumit.ml`,
-//       openGraph: {
-//         title: `${references.find(post => post.slug === slug)?.title} | sumit.ml`,
-//         description: `${references.find(post => post.slug === slug)?.description}`,
-//         images: [
-//           {
-//             url: `/references/posts/${slug}/opengraph-image.png`,
-//             width: 1200,
-//             height: 630,
-//             alt: `${references.find(post => post.slug === slug)?.description}`,
-//           },
-//         ],
-//       },
-//       twitter: {
-//         card: "summary_large_image",
-//         title: `${references.find(post => post.slug === slug)?.title} | sumit.ml`,
-//         description: `${references.find(post => post.slug === slug)?.description}`,
-//         images: [
-//           {
-//             url: `/references/posts/${slug}/twitter-image.png`,
-//             width: 1200,
-//             height: 630,
-//             alt: `${references.find(post => post.slug === slug)?.description}`,
-//           },
-//         ],
-//       },
-//     };
-//   }
+    return {
+      title: `${references.find(post => post.slug === slug)?.title} | sumit.ml`,
+      openGraph: {
+        title: `${references.find(post => post.slug === slug)?.title} | sumit.ml`,
+        description: `${references.find(post => post.slug === slug)?.description}`,
+        images: [
+          {
+            url: `/references/posts/${slug}/opengraph-image.png`,
+            width: 1200,
+            height: 630,
+            alt: `${references.find(post => post.slug === slug)?.description}`,
+          },
+        ],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: `${references.find(post => post.slug === slug)?.title} | sumit.ml`,
+        description: `${references.find(post => post.slug === slug)?.description}`,
+        images: [
+          {
+            url: `/references/posts/${slug}/twitter-image.png`,
+            width: 1200,
+            height: 630,
+            alt: `${references.find(post => post.slug === slug)?.description}`,
+          },
+        ],
+      },
+    };
+  }
   
 
 export default async function Reference({ 

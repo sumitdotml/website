@@ -1,11 +1,11 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-    title: 'About Me | sumit.ml',
-    description: 'things about me in more detail',
+    title: 'Books | sumit.ml',
+    description: 'A collection of books I\'ve read and taken notes on.',
 }
 
-export default function Layout({
+export default function Books({
     children,
 }: {
     children: React.ReactNode
