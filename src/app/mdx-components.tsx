@@ -86,7 +86,7 @@ export const mdxComponents: MDXComponents = {
             {children}
         </blockquote>
     ),
-    hr: () => <Ruler color="purple" marginTop="lg" marginBottom="lg" />,
+    hr: () => <Ruler color="gray" marginTop="md" marginBottom="md" />,
 
     // Links
     a: ({ href, children }) => (

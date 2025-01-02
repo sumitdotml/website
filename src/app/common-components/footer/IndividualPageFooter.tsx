@@ -1,13 +1,15 @@
 'use client'
 
+import { usePathname } from 'next/navigation'
 import { BaseFooter } from './BaseFooter'
 import { FooterLink } from './components/FooterLink'
 import { FooterDivider } from './components/FooterDivider'
 
 interface IndividualPageFooterProps {
-    sectionName: string;
+    sectionName?: string;
+    parentPageName?: string;
     showToTop?: boolean;
-    showSectionName?: boolean;
+    showParentPage?: boolean;
     showHomePage?: boolean;
     showSocialLinks?: boolean;
     showCopyright?: boolean;
@@ -15,23 +17,52 @@ interface IndividualPageFooterProps {
 
 export function IndividualPageFooter({ 
     sectionName,
+    parentPageName,
     showToTop = true,
-    showSectionName = true,
+    showParentPage = true,
     showHomePage = true,
     showSocialLinks = true,
     showCopyright = true
 }: IndividualPageFooterProps) {
+    const pathname = usePathname()
+    
+    // Get the parent path and name dynamically if not provided
+    const getParentInfo = () => {
+        if (parentPageName) return { name: parentPageName, path: pathname.split('/').slice(0, -1).join('/') }
+        
+        const pathParts = pathname.split('/')
+        // Remove empty string and current page
+        const filteredParts = pathParts.filter(part => part)
+        
+        if (filteredParts.length <= 1) {
+            return { name: sectionName || 'Home', path: '/' }
+        }
+        
+        // Get parent path (one level up)
+        const parentPath = '/' + filteredParts.slice(0, -1).join('/')
+        
+        // Format the parent name
+        const parentName = filteredParts[filteredParts.length - 2]
+            .split('-')
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(' ')
+        
+        return { name: parentName, path: parentPath }
+    }
+
+    const { name: parentName, path: parentPath } = getParentInfo()
+
     const navigationLinks = (
         <div className="flex flex-wrap items-center justify-center gap-1">
             {showToTop && (
                 <>
                     <FooterLink href="#top">To the top</FooterLink>
-                    {(showSectionName || showHomePage) && <FooterDivider />}
+                    {(showParentPage || showHomePage) && <FooterDivider />}
                 </>
             )}
-            {showSectionName && (
+            {showParentPage && (
                 <>
-                    <FooterLink href={`/${sectionName.toLowerCase()}`}>{sectionName} page</FooterLink>
+                    <FooterLink href={parentPath}>{parentName} page</FooterLink>
                     {showHomePage && <FooterDivider />}
                 </>
             )}
@@ -46,7 +77,7 @@ export function IndividualPageFooter({
             navigationLinks={navigationLinks}
             className="mt-6"
             showToTop={showToTop}
-            showSectionName={showSectionName}
+            showSectionName={showParentPage}
             showSocialLinks={showSocialLinks}
             showCopyright={showCopyright}
         />

@@ -25,7 +25,7 @@ export default function LLMFromScratchRaschka() {
                     { href: '/', label: 'Home', emoji: '👾' },
                     { href: '/notes', label: 'Notes' },
                     { href: '/notes/books', label: 'Books' },
-                    { href: '/notes/books/llm-from-scratch-raschka', label: 'LLM From Scratch Book' }
+                    { label: 'LLM From Scratch Book' }
                 ]} 
             />
             <ThemeToggle />

@@ -20,9 +20,14 @@ interface BreadcrumbProps {
 
 export function DynamicBreadcrumb({ items, className }: BreadcrumbProps) {
     const lastItem = items[items.length - 1];
-    const firstItem = items[0];
-    // For mobile, we only want to show up to the section level (first two items)
-    const mobileItems = items.slice(0, 2);
+    const parentItem = items[items.length - 2];
+    const homeItem = items[0];
+    
+    // For mobile, we want to show Home, immediate parent (if exists), and current page
+    // But avoid duplicate home items
+    const mobileItems = parentItem 
+        ? (parentItem.href === '/' ? [homeItem, lastItem] : [homeItem, parentItem, lastItem])
+        : [homeItem, lastItem];
 
     return (
         <BaseBreadcrumb className={cn(monoFont.className, className)}>
@@ -54,7 +59,7 @@ export function DynamicBreadcrumb({ items, className }: BreadcrumbProps) {
                     ))}
                 </div>
 
-                {/* Mobile View - Only up to section level */}
+                {/* Mobile View - Home, parent (if exists), and current page */}
                 <div className="sm:hidden w-full">
                     <div className="flex items-center gap-1.5">
                         {mobileItems.map((item, index) => (
