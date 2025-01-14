@@ -56,10 +56,10 @@ const variants = {
         Icon: AlertCircle
     },
     green: {
-        container: 'bg-green-50 dark:bg-green-950 text-green-950 dark:text-green-50',
-        title: 'text-green-800 dark:text-green-200 font-bold',
-        icon: 'text-green-700 dark:text-green-300',
-        border: 'border-green-200 dark:border-green-800',
+        container: 'bg-emerald-50/80 dark:bg-green-950 text-emerald-800 dark:text-green-50',
+        title: 'text-emerald-700 dark:text-green-200 font-bold',
+        icon: 'text-emerald-600 dark:text-green-300',
+        border: 'border-emerald-200 dark:border-green-800',
         Icon: CheckCircle2
     },
     blue: {

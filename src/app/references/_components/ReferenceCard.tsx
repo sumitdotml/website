@@ -9,7 +9,8 @@ export function ReferenceCard({ post, isLast }: { post: Reference; isLast?: bool
     return (
         <div className="group">
             <Link 
-                href={`/references/${post.slug}`} 
+                href={post.href || `/references/${post.slug}`}  // a popout link is preferred
+                target={post.href ? "_blank" : undefined}
                 className={cn(
                     "block py-3",
                     "transition-all duration-300",

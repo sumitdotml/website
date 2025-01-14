@@ -5,8 +5,9 @@ export const references: Reference[] = [
         id: 1,
         title: "Math References",
         description: "Formulas from my math learning journey for quick reference.",
-        lastUpdated: "January 1, 2025",
-        slug: "math"
+        lastUpdated: "January 14, 2025",
+        slug: "math",
+        href: "https://sumitdotml.notion.site/math" // popout preferred
     },
     {
         id: 2,

@@ -33,7 +33,7 @@ export const mdxComponents: MDXComponents = {
 
     // Paragraph
     p: ({ children }) => (
-        <Text className="mb-4">
+        <Text className="mb-4 text-foreground dark:text-foreground">
             {children}
         </Text>
     ),
@@ -57,12 +57,12 @@ export const mdxComponents: MDXComponents = {
 
     // Inline text styling
     strong: ({ children }) => (
-        <span className="font-bold text-500">
+        <span className="font-bold text-foreground dark:text-foreground">
             {children}
         </span>
     ),
     em: ({ children }) => (
-        <span className="italic text-400">
+        <span className="italic text-muted-foreground dark:text-muted-foreground">
             {children}
         </span>
     ),
@@ -70,7 +70,8 @@ export const mdxComponents: MDXComponents = {
         <code className={cn(
             monoFont.className,
             "px-1.5 py-0.5 mx-0.5",
-            "text-sm bg-purple-500/10",
+            "text-sm bg-purple-100 dark:bg-purple-900/30",
+            "text-purple-700 dark:text-purple-300",
             "rounded-md"
         )}>
             {children}
@@ -81,7 +82,8 @@ export const mdxComponents: MDXComponents = {
     blockquote: ({ children }) => (
         <blockquote className={cn(
             "pl-4 border-l-2 border-purple-500/50",
-            "my-4 italic text-muted-foreground"
+            "my-4 italic",
+            "text-muted-foreground/90 dark:text-muted-foreground/90"
         )}>
             {children}
         </blockquote>
@@ -93,9 +95,12 @@ export const mdxComponents: MDXComponents = {
         <a 
             href={href} 
             className={cn(
-                "text-purple-500 hover:text-purple-400",
+                "text-purple-600 dark:text-purple-300",
+                "hover:text-purple-700 dark:hover:text-purple-200",
                 "transition-colors duration-200",
-                "underline underline-offset-4"
+                "underline underline-offset-4",
+                "decoration-purple-300/50 dark:decoration-purple-500/50",
+                "hover:decoration-purple-400 dark:hover:decoration-purple-400"
             )}
             target={href?.startsWith('http') ? '_blank' : undefined}
             rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}

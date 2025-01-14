@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Code2, Brain, Sparkles, BookOpen, Divide } from 'lucide-react'
+import { Code, Brain, Divide, Rotate3D } from 'lucide-react'
 import { StackVertical } from '@/common-components/layout-stack/layout-stack'
 import Text from '@/common-components/text/text'
 import TextHeading from '../text-heading/text-heading'
@@ -44,23 +44,28 @@ export function CurrentWork() {
     const items = [
         {
             icon: <Brain className="w-4 h-4" />,
-            text: "Gaining a deeper understanding of traditional ML"
+            text: "Studying traditional ML"
         },
         {
             icon: <Divide className="w-4 h-4" />,
             text: "Learning math for ML"
         },
         {
-            icon: <Sparkles className="w-4 h-4" />,
-            text: "Exploring AI/ML research papers"
+            icon: <Code className="w-4 h-4" />,
+            text: "Mastering the language of Python"
         },
+
         {
-            icon: <BookOpen className="w-4 h-4" />,
-            text: "Reading ",
-            hyperlink: "/notes/books",
-            hyperlinkText: "ML Books",
-            endText: ""
+            icon: <Rotate3D className="w-4 h-4" />,
+            text: "Learning to get comfy with PyTorch till 5D",
         }
+        // {
+        //     icon: <BookOpen className="w-4 h-4" />,
+        //     text: "Reading ",
+        //     hyperlink: "/notes/books",
+        //     hyperlinkText: "ML Books",
+        //     endText: ""
+        // }
     ]
 
     return (
@@ -78,9 +83,9 @@ export function CurrentWork() {
                             icon={item.icon}
                             text={item.text}
                             delay={1.2 + index * 0.1}
-                            hyperlink={item.hyperlink}
-                            hyperlinkText={item.hyperlinkText}
-                            endText={item.endText}
+                            // hyperlink={item.hyperlink}
+                            // hyperlinkText={item.hyperlinkText}
+                            // endText={item.endText}
                         />
                     ))}
                 </StackVertical>

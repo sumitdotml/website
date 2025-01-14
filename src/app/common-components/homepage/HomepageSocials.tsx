@@ -1,6 +1,5 @@
 'use client'
 
-import { cn } from '@/styles/lib/utils'
 import TextHeading from '@/common-components/text-heading/text-heading'
 import Text from '@/common-components/text/text'
 import Link from 'next/link'

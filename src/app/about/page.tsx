@@ -12,7 +12,6 @@ export default function About() {
     return (
         <BaseContainer size="md" paddingX="md" paddingY="lg">
             <StackVertical gap="md">
-                {/* Breadcrumb */}
                 <div className="flex items-center justify-between">
                     <DynamicBreadcrumb 
                         items={[
@@ -23,15 +22,18 @@ export default function About() {
                     <ThemeToggle />
                 </div>
 
-                {/* Header Content */}
                 <div>
                 <TextHeading as="h1" weight="bold">
-                    About
+                    My Novice Journey: A Monologue
                 </TextHeading>
-					<Text variant="muted" size="xs" className="mb-8">Last updated: December 30, 2024</Text>
+					<Text variant="muted" size="xs" className="mb-8">January 14, 2025</Text>
                 <StackVertical gap="md">
                     <Text>
-                            Hi! I am Sumit. I am a SWE currently based in Tokyo, and I have a big passion for AI.
+                            Hi, thanks for checking in! I like going on random tangents when I write, so I'm not sure if this is the best way to write about myself. But hey, I'm glad you're here.
+                    </Text>
+
+                    <Text>
+                        I have an interesting name. During my middle and high school years, I knew the existences of only 2 people with the same name as me. I thought it was not a very common name in my country, but turns out a name isn't limited to a country. And for those wondering, no I am not from India. Although I understand why you'd think so. It's all good.
                     </Text>
                     <Text>
                     I studied in Japan as a business undergraduate for 4 years and received a degree in it, but I was truly never interested in anything related to business. Well, it's a long story about why I ended up at the university I ended up in and pursued the kind of degree I pursued despite having next to no interest in any of that, but life does really work in fascinating ways. I must say that it hasn't turned out too bad for myself.

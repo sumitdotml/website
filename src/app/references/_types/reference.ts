@@ -4,4 +4,5 @@ export interface Reference {
     description: string;
     lastUpdated: string;
     slug: string;
+    href?: string;
 } 

@@ -7,6 +7,7 @@ import Text from "@/common-components/text/text";
 import { IndividualPageFooter } from "@/common-components/footer/IndividualPageFooter";
 import { DynamicBreadcrumb } from "@/common-components/breadcrumb/breadcrumb";
 import { ThemeToggle } from "@/styles/components/ui/theme-toggle";
+import Link from "next/link";
 
 export default function MathReferences() {
     return (
@@ -28,8 +29,12 @@ export default function MathReferences() {
                         <TextHeading as="h1" weight="bold">
                             Math References
                         </TextHeading>
-
-                        <Text variant="red">Currently under construction. </Text>
+                        <Text variant="red">
+                            If you have somehow reached this page, you probably have too much time on your hands. But if it's a genuine mistake, click the link below to see all my math references.
+                        </Text>
+                        <Text className="underline font-bold hover:text-purple-500">
+                            <Link href="https://sumitdotml.notion.site/math">This one</Link>
+                        </Text>
                     </StackVertical>
                 </StackVertical>    
             </BaseContainer>

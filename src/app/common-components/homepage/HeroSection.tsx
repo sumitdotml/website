@@ -9,6 +9,7 @@ import { StackVertical } from '@/common-components/layout-stack/layout-stack'
 import Link from 'next/link'
 import Image from 'next/image'
 import Ruler from '../ruler/ruler'
+import { List, ListItem } from '@/common-components/list/list'
 
 export function HeroSection() {
     return (
@@ -18,10 +19,8 @@ export function HeroSection() {
             transition={{ duration: 0.5 }}
             className="relative pb-8"
         >
-            {/* Content */}
             <div className="relative">
                 <StackVertical gap="xs">
-                    {/* Emoji with floating animation */}
                     <motion.div
                         animate={{ 
                             y: [0, -10, 0],
@@ -36,7 +35,6 @@ export function HeroSection() {
                         👾
                     </motion.div>
 
-                    {/* Name and title with staggered fade-in */}
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -48,7 +46,6 @@ export function HeroSection() {
                         </TextHeading>
                     </motion.div>
 
-                    {/* Introduction with staggered fade-in */}
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -58,7 +55,7 @@ export function HeroSection() {
                             Hi! I am Sumit.
                         </Text>
 
-                        <Ruler color='colorless' marginTop='sm' marginBottom='none'/>
+                        <Ruler color='colorless' marginTop='lg' marginBottom='none'/>
 
                         <motion.div
                             initial={{ opacity: 0 }}
@@ -80,7 +77,7 @@ export function HeroSection() {
                                     This is my graph of thoughts, notes, and ideas.
                                 </Text>
 
-                                <Ruler color='colorless' marginTop='sm' marginBottom='none'/>
+                                <Ruler color='colorless' marginTop='lg' marginBottom='none'/>
 
                                 <Text>
                                     I ramble about things on my{' '}
@@ -90,7 +87,29 @@ export function HeroSection() {
                                     ; you can check it out if you're interested.
                                 </Text>
 
-                                <Ruler color='colorless' marginTop='sm' marginBottom='none'/>
+                                <Ruler color='colorless' marginTop='lg' marginBottom='none'/>
+
+                                <Text>
+                                    Here are some reads I recommend from this site if you're interested:
+                                </Text>
+
+                                <Ruler color='colorless' marginTop='md' marginBottom='none'/>
+
+                                <List spacing='tight'>
+                                    <ListItem>
+                                        <Link href="/about" className="underline hover:text-purple-500">My novice journey, a monologue</Link>
+                                    </ListItem>
+                                    <ListItem>
+                                        <Link href="/blog/my-2025-resolution" className="underline hover:text-purple-500">My 2025 Resolution: Beyond the Roadmaps, Beyond the Timelines</Link>
+                                    </ListItem>
+                                    <ListItem>
+                                        <Link href="/blog/getting-started-with-machine-learning" className="underline hover:text-purple-500">
+                                            Getting Started with Machine Learning
+                                        </Link>
+                                    </ListItem>
+                                </List>
+
+                                <Ruler color='colorless' marginTop='lg' marginBottom='none'/>
 
                                 <Text>
                                     I also document my learnings through learning reflections every week. You can take a look at those{' '}
@@ -99,13 +118,11 @@ export function HeroSection() {
                                     </Link>
                                     .
                                 </Text>
-                                
                         </motion.div>
                     </motion.div>
                 </StackVertical>
             </div>
 
-            {/* Image section */}
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -117,7 +134,7 @@ export function HeroSection() {
                         className="object-cover"
                         fill
                         src="/gion-town.png" 
-                        alt="Gion Town"
+                        alt="A photo of Gion Town, Kyoto I took on March 2024."
                         priority
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 80vw"
                     />
