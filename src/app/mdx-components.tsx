@@ -57,12 +57,12 @@ export const mdxComponents: MDXComponents = {
 
     // Inline text styling
     strong: ({ children }) => (
-        <span className="font-bold text-purple-500">
+        <span className="font-bold text-500">
             {children}
         </span>
     ),
     em: ({ children }) => (
-        <span className="italic text-purple-400">
+        <span className="italic text-400">
             {children}
         </span>
     ),
