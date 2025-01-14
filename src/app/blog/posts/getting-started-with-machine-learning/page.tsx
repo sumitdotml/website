@@ -25,7 +25,7 @@ export default function GettingStartedWithMLPost() {
                 items={[
                     { href: '/', label: 'Home', emoji: '👾' },
                     { href: '/blog', label: 'Blog' },
-                    { label: 'Getting Started with Machine Learning' }
+                    { label: 'Getting Started with ML' }
                 ]} 
             />
             <ThemeToggle />

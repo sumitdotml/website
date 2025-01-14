@@ -8,13 +8,11 @@ import { DynamicBreadcrumb } from "@/common-components/breadcrumb/breadcrumb"
 import { ThemeToggle } from "@/styles/components/ui/theme-toggle"
 import { IndividualPageFooter } from "@/common-components/footer/IndividualPageFooter"
 import Link from "next/link"
-import Ruler from "@/common-components/ruler/ruler"
 
 export default function Books() {
     return (
         <BaseContainer size="md" paddingX="md" paddingY="lg">
             <StackVertical gap="md">
-                {/* Breadcrumb */}
                 <div className="flex items-center justify-between">
                     <DynamicBreadcrumb 
                         items={[
@@ -26,7 +24,6 @@ export default function Books() {
                     <ThemeToggle />
                 </div>
 
-                {/* Header Content */}
                 <div>
                 <TextHeading as="h1" weight="bold">
                     Books

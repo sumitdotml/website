@@ -17,7 +17,7 @@ export function HomepageFooter({
     showCopyright = true
 }: HomepageFooterProps) {
     const navigationLinks = showToTop ? (
-        <FooterLink href="#top" color={color}>To the top</FooterLink>
+        <FooterLink href="#top" color={color}>To the Top</FooterLink>
     ) : null
 
     return (

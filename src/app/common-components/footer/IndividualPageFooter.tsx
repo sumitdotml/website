@@ -56,18 +56,18 @@ export function IndividualPageFooter({
         <div className="flex flex-wrap items-center justify-center gap-1">
             {showToTop && (
                 <>
-                    <FooterLink href="#top">To the top</FooterLink>
+                    <FooterLink href="#top">To the Top</FooterLink>
                     {(showParentPage || showHomePage) && <FooterDivider />}
                 </>
             )}
             {showParentPage && (
                 <>
-                    <FooterLink href={parentPath}>{parentName} page</FooterLink>
+                    <FooterLink href={parentPath}>{parentName} Page</FooterLink>
                     {showHomePage && <FooterDivider />}
                 </>
             )}
             {showHomePage && (
-                <FooterLink href="/">Home page</FooterLink>
+                <FooterLink href="/">Home Page</FooterLink>
             )}
         </div>
     )

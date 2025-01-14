@@ -8,13 +8,11 @@ import Text from "@/common-components/text/text"
 import { DynamicBreadcrumb } from "@/common-components/breadcrumb/breadcrumb"
 import { ThemeToggle } from "@/styles/components/ui/theme-toggle"
 import Link from "next/link"
-import Ruler from "@/common-components/ruler/ruler"
 
 export default function Notes() {
     return (
         <BaseContainer size="md" paddingX="md" paddingY="lg">
             <StackVertical gap="md">
-                {/* Breadcrumb */}
                 <div className="flex items-center justify-between">
                     <DynamicBreadcrumb 
                         items={[
@@ -25,7 +23,6 @@ export default function Notes() {
                     <ThemeToggle />
                 </div>
 
-                {/* Header Content */}
                 <div>
                 <TextHeading as="h1" weight="bold">
                     Notes

@@ -20,7 +20,7 @@ export default function Chapter1() {
                 { href: '/', label: 'Home', emoji: '👾' },
                 { href: '/notes', label: 'Notes' },
                 { href: '/notes/books', label: 'Books' },
-                { href: '/notes/books/llm-from-scratch-raschka', label: 'LLM from Scratch Book' },
+                { href: '/notes/books/llm-from-scratch-raschka', label: 'LLM from Scratch' },
                 { label: 'Chapter 1' }
               ]}
             />
@@ -34,7 +34,7 @@ export default function Chapter1() {
         </StackVertical>
       </BaseContainer>
 
-      <IndividualPageFooter parentPageName='LLM book' />
+      <IndividualPageFooter parentPageName='LLM Book' />
     </>
   )
 }

@@ -6,8 +6,8 @@ import { motion } from 'framer-motion'
 import { cn } from '@/styles/lib/utils'
 
 export function ThemeToggle({ className }: { className?: string }) {
-    const { theme, setTheme } = useTheme()
-    const isDark = theme === 'dark'
+    const { theme, setTheme, systemTheme } = useTheme()
+    const isDark = theme === 'dark' || (theme === 'system' && systemTheme === 'dark')
 
     return (
         <motion.button

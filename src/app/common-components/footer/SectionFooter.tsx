@@ -23,12 +23,12 @@ export function SectionFooter({
         <>
             {showToTop && (
                 <>
-                    <FooterLink href="#top" color={color}>To the top</FooterLink>
+                    <FooterLink href="#top" color={color}>To the Top</FooterLink>
                     {showHomePage && <FooterDivider color={color} />}
                 </>
             )}
             {showHomePage && (
-                <FooterLink href="/" color={color}>Home page</FooterLink>
+                <FooterLink href="/" color={color}>Home Page</FooterLink>
             )}
         </>
     )
