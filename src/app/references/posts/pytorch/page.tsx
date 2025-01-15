@@ -7,7 +7,6 @@ import { StackVertical } from "@/common-components/layout-stack/layout-stack";
 import { DynamicBreadcrumb } from "@/common-components/breadcrumb/breadcrumb";
 import { ThemeToggle } from "@/styles/components/ui/theme-toggle";
 import { IndividualPageFooter } from "@/common-components/footer/IndividualPageFooter";
-import { TableOfContents } from "@/common-components/table-of-contents/table-of-contents";
 
 export default function PyTorchReferences() {
 	return (
@@ -23,9 +22,6 @@ export default function PyTorchReferences() {
 					/>
 					<ThemeToggle />
 				</div>
-
-				<TableOfContents contentId="ToC" />
-
 				<div className="prose dark:prose-invert max-w-none">
 					<Content components={mdxComponents} />
 				</div>

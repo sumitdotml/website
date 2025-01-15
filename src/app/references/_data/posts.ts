@@ -7,13 +7,13 @@ export const references: Reference[] = [
         description: "Formulas from my math learning journey for quick reference.",
         lastUpdated: "January 14, 2025",
         slug: "math",
-        href: "https://sumitdotml.notion.site/math" // popout preferred
+        href: "https://sumitdotml.notion.site/math"
     },
     {
         id: 2,
         title: "PyTorch References",
         description: "PyTorch code snippets that I've used & learned from for quick reference.",
-        lastUpdated: "January 1, 2025",
+        lastUpdated: "January 16, 2025",
         slug: "pytorch"
     }
 ] 
