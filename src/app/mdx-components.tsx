@@ -7,6 +7,7 @@ import { List, ListItem } from '@/common-components/list/list'
 import Ruler from '@/common-components/ruler/ruler'
 import { cn } from '@/styles/lib/utils'
 import { monoFont } from '@/styles/fonts/fonts'
+import CodeBlock from '@/common-components/code-block/code-block'
 
 export const mdxComponents: MDXComponents = {
     // Headings
@@ -66,17 +67,35 @@ export const mdxComponents: MDXComponents = {
             {children}
         </span>
     ),
-    code: ({ children }) => (
-        <code className={cn(
-            monoFont.className,
-            "px-1.5 py-0.5 mx-0.5",
-            "text-sm bg-purple-100 dark:bg-purple-900/30",
-            "text-purple-700 dark:text-purple-300",
-            "rounded-md"
-        )}>
-            {children}
-        </code>
-    ),
+		code: ({ children, className }) => {
+        const match = /language-(\w+)/.exec(className || '');
+        const language = match ? match[1] : '';
+
+        if (!language) {
+            // Inline code
+            return (
+                <code className={cn(
+                    monoFont.className,
+                    "px-1.5 py-0.5 mx-0.5 my-0.5",
+                    "text-inherit",
+                    "bg-purple-100/80 dark:bg-purple-900/50",
+                    "text-purple-800 dark:text-purple-200",
+                    "rounded-md",
+                    "inline-block leading-normal"
+                )}>
+                    {children}
+                </code>
+            );
+        }
+
+        // Code block
+        return (
+            <CodeBlock 
+                code={children as string} 
+                language={language} 
+            />
+        );
+    }, 
 
     // Block elements
     blockquote: ({ children }) => (

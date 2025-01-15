@@ -1,41 +1,40 @@
-'use client'
+"use client";
 
-import { StackVertical } from "@/common-components/layout-stack/layout-stack";
+import Content from "./content.mdx";
+import { mdxComponents } from "app/mdx-components";
 import BaseContainer from "@/common-components/base-container/base-container";
-import TextHeading from "@/common-components/text-heading/text-heading";
-import Text from "@/common-components/text/text";
-import { IndividualPageFooter } from "@/common-components/footer/IndividualPageFooter";
+import { StackVertical } from "@/common-components/layout-stack/layout-stack";
 import { DynamicBreadcrumb } from "@/common-components/breadcrumb/breadcrumb";
 import { ThemeToggle } from "@/styles/components/ui/theme-toggle";
+import { IndividualPageFooter } from "@/common-components/footer/IndividualPageFooter";
+import { TableOfContents } from "@/common-components/table-of-contents/table-of-contents";
 
 export default function PyTorchReferences() {
-    return (
-        <>
-            <BaseContainer size="md" paddingX="md" paddingY="lg">
-                <StackVertical gap="md">
-                    <div className="flex items-center justify-between">
-                        <DynamicBreadcrumb
-                        items={[
-                            { href: '/', label: 'Home', emoji: '👾' },
-                            { href: '/references', label: 'References' },
-                            { label: 'PyTorch' }
-                        ]}
-                    />
-                    <ThemeToggle />
-                    </div>
+	return (
+		<BaseContainer size="md" paddingX="md" paddingY="lg">
+			<StackVertical gap="md">
+				<div className="flex items-center justify-between">
+					<DynamicBreadcrumb
+						items={[
+							{ href: "/", label: "Home", emoji: "👾" },
+							{ href: "/references", label: "References" },
+							{ label: "Week 1" },
+						]}
+					/>
+					<ThemeToggle />
+				</div>
 
-                    <StackVertical gap="md">
-                        <TextHeading as="h1" weight="bold">
-                            PyTorch References
-                        </TextHeading>
+				<TableOfContents contentId="ToC" />
 
-                        <Text variant="red">Currently under construction. </Text>
-                    </StackVertical>
-                </StackVertical>    
-            </BaseContainer>
+				<div className="prose dark:prose-invert max-w-none">
+					<Content components={mdxComponents} />
+				</div>
+			</StackVertical>
 
-            <IndividualPageFooter sectionName="References" showToTop={false} />
-
-        </>
-    )
+			<IndividualPageFooter
+				parentPageName="References"
+				showToTop={true}
+			/>
+		</BaseContainer>
+	);
 }

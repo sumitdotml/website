@@ -9,6 +9,7 @@ npx create-next-app@latest
 ```bash
 npm install framer-motion
 npm install next-themes
+npm install prism-react-renderer
 ```
 
 ## TODO
