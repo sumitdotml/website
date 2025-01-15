@@ -17,7 +17,7 @@ export default function PyTorchReferences() {
 						items={[
 							{ href: "/", label: "Home", emoji: "👾" },
 							{ href: "/references", label: "References" },
-							{ label: "Week 1" },
+							{ label: "PyTorch" },
 						]}
 					/>
 					<ThemeToggle />
