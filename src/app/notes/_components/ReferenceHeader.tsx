@@ -7,13 +7,13 @@ import { ThemeToggle } from "@/components/ui/theme/theme-toggle"
 export function ReferenceHeader() {
     return (
         <StackVertical gap="md">
-            <title>References | sumit.ml</title>
+            <title>Notes | sumit.ml</title>
 
             <div className="flex items-center justify-between">
                 <DynamicBreadcrumb 
                     items={[
                         { href: '/', label: 'Home', emoji: '👾' },
-                        { label: 'References' }
+                        { label: 'Notes' }
                     ]}
                 />
                 <ThemeToggle />
@@ -21,10 +21,10 @@ export function ReferenceHeader() {
 
             <div>
                 <TextHeading as="h1" weight="bold">
-                    References
+                    Notes
                 </TextHeading>
                 <Text variant="muted" size="sm">
-                    A collection of references that I have collected from my learning journey. Mostly Math and ML-related.
+                    A collection of notes that I have collected from my learning journey. Mostly Math and ML-related.
                 </Text>
             </div>
         </StackVertical>

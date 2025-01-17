@@ -3,9 +3,9 @@ import { cn } from "@/lib/utils/utils"
 import { StackVertical, StackHorizontal } from "@/components/layout/layout-stack/layout-stack"
 import Text from "@/components/ui/text/text"
 import TextHeading from "@/components/ui/text-heading/text-heading"
-import { Reference } from "../_types/reference"
+import { NotesTypes } from "../_types/note-types"
 
-export function ReferenceCard({ post, isLast }: { post: Reference; isLast?: boolean }) {
+export function ReferenceCard({ post, isLast }: { post: NotesTypes; isLast?: boolean }) {
     const isExternalLink = post.href.startsWith('http')
     
     return (
