@@ -1,12 +1,12 @@
 'use client'
 
 import Content from './content.mdx'
-import { mdxComponents } from 'app/mdx-components'
-import BaseContainer from "@/common-components/base-container/base-container"
-import { StackVertical } from "@/common-components/layout-stack/layout-stack"
-import { DynamicBreadcrumb } from "@/common-components/breadcrumb/breadcrumb"
-import { ThemeToggle } from "@/styles/components/ui/theme-toggle"
-import { IndividualPageFooter } from "@/common-components/footer/IndividualPageFooter"
+import { mdxComponents } from '@/lib/mdx/mdx-components'
+import BaseContainer from "@/components/layout/container/base-container"
+import { StackVertical } from "@/components/layout/layout-stack/layout-stack"
+import { DynamicBreadcrumb } from "@/components/ui/primitives/breadcrumb"
+import { ThemeToggle } from "@/components/ui/theme/theme-toggle"
+import { IndividualPageFooter } from "@/components/layout/footer/IndividualPageFooter"
 
 export default function Week1() {
     return (

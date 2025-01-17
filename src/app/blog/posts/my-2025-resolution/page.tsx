@@ -1,14 +1,14 @@
 'use client'
 
 import Content from './content.mdx'
-import { mdxComponents } from 'app/mdx-components'
-import BaseContainer from '@/common-components/base-container/base-container'
-import { StackVertical } from '@/common-components/layout-stack/layout-stack'
-import { DynamicBreadcrumb } from '@/common-components/breadcrumb/breadcrumb'
-import { ThemeToggle } from '@/styles/components/ui/theme-toggle'
-import { IndividualPageFooter } from '@/common-components/footer/IndividualPageFooter'
-import TextHeading from '@/common-components/text-heading/text-heading'
-import Text from '@/common-components/text/text'
+import { mdxComponents } from '@/lib/mdx/mdx-components'
+import BaseContainer from '@/components/layout/container/base-container'
+import { StackVertical } from '@/components/layout/layout-stack/layout-stack'
+import { DynamicBreadcrumb } from '@/components/ui/primitives/breadcrumb'
+import { ThemeToggle } from '@/components/ui/theme/theme-toggle'
+import { IndividualPageFooter } from '@/components/layout/footer/IndividualPageFooter'
+import TextHeading from '@/components/ui/text-heading/text-heading'
+import Text from '@/components/ui/text/text'
 
 export default function MySelfReflectionFor2025() {
   return (

@@ -1,9 +1,9 @@
-import BaseContainer from "@/common-components/base-container/base-container"
-import { StackVertical } from "@/common-components/layout-stack/layout-stack"
+import BaseContainer from "@/components/layout/container/base-container"
+import { StackVertical } from "@/components/layout/layout-stack/layout-stack"
 import { BlogCard } from "./_components/BlogCard"
 import { BlogHeader } from "./_components/BlogHeader"
 import { blogPosts } from "./_data/posts"
-import { SectionFooter } from "@/common-components/footer/SectionFooter"
+import { SectionFooter } from "@/components/layout/footer/SectionFooter"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {

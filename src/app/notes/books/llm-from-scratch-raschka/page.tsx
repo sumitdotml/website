@@ -1,19 +1,16 @@
 'use client'
 
-import BaseContainer from "@/common-components/base-container/base-container";
-import { DynamicBreadcrumb } from "@/common-components/breadcrumb/breadcrumb";
-import { IndividualPageFooter } from "@/common-components/footer/IndividualPageFooter";
-import { StackVertical } from "@/common-components/layout-stack/layout-stack";
-import Ruler from "@/common-components/ruler/ruler";
-import TextHeading from "@/common-components/text-heading/text-heading";
-import Text from "@/common-components/text/text";
-import { ThemeToggle } from "@/styles/components/ui/theme-toggle";
+import BaseContainer from "@/components/layout/container/base-container";
+import { DynamicBreadcrumb } from "@/components/ui/primitives/breadcrumb";
+import { IndividualPageFooter } from "@/components/layout/footer/IndividualPageFooter";
+import { StackVertical } from "@/components/layout/layout-stack/layout-stack";
+import Ruler from "@/components/ui/ruler/ruler";
+import TextHeading from "@/components/ui/text-heading/text-heading";
+import Text from "@/components/ui/text/text";
+import { ThemeToggle } from "@/components/ui/theme/theme-toggle";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
 export default function LLMFromScratchRaschka() {
-    const pathname = usePathname();
-    const chapter = pathname.split('/').pop();
 
     return (
         <>

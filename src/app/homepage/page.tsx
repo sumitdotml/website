@@ -1,13 +1,13 @@
 'use client'
 
-import BaseContainer from "@/common-components/base-container/base-container"
-import { StackVertical } from "@/common-components/layout-stack/layout-stack"
-import { HomepageFooter } from "@/common-components/footer/HomepageFooter"
-import { HeroSection } from "@/common-components/homepage/HeroSection"
-import { CurrentWork } from "@/common-components/homepage/CurrentWork"
-import { Navbar } from "@/common-components/navbar/Navbar"
-import { ThemeToggle } from "@/components/ui/theme-toggle"
-import { HomepageSocials } from "@/common-components/homepage/HomepageSocials"
+import BaseContainer from "@/components/layout/container/base-container"
+import { StackVertical } from "@/components/layout/layout-stack/layout-stack"
+import { HomepageFooter } from "@/components/layout/footer/HomepageFooter"
+import { HeroSection } from "@/components/blocks/homepage/HeroSection"
+import { CurrentWork } from "@/components/blocks/homepage/CurrentWork"
+import { Navbar } from "@/components/ui/navbar/Navbar"
+import { ThemeToggle } from "@/components/ui/theme/theme-toggle"
+import { HomepageSocials } from "@/components/blocks/homepage/HomepageSocials"
 
 export default function Homepage() {
   return (

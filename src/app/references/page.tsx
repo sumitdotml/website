@@ -1,10 +1,10 @@
-import { StackVertical } from "@/common-components/layout-stack/layout-stack";
+import { StackVertical } from "@/components/layout/layout-stack/layout-stack";
 
-import BaseContainer from "@/common-components/base-container/base-container";
+import BaseContainer from "@/components/layout/container/base-container";
 import { ReferenceHeader } from "./_components/ReferenceHeader";
 import { ReferenceCard } from "./_components/ReferenceCard";
 import { references } from "./_data/posts";
-import { SectionFooter } from "@/common-components/footer/SectionFooter";
+import { SectionFooter } from "@/components/layout/footer/SectionFooter";
 export default function References() {
     return (
         <>

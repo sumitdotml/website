@@ -1,15 +1,15 @@
 import Link from "next/link"
-import { cn } from "@/styles/lib/utils"
-import { StackVertical, StackHorizontal } from "@/common-components/layout-stack/layout-stack"
-import Text from "@/common-components/text/text"
-import TextHeading from "@/common-components/text-heading/text-heading"
+import { cn } from "@/lib/utils/utils"
+import { StackVertical, StackHorizontal } from "@/components/layout/layout-stack/layout-stack"
+import Text from "@/components/ui/text/text"
+import TextHeading from "@/components/ui/text-heading/text-heading"
 import { Reference } from "../_types/reference"
 
 export function ReferenceCard({ post, isLast }: { post: Reference; isLast?: boolean }) {
     return (
         <div className="group">
             <Link 
-                href={post.href || `/references/${post.slug}`}  // a popout link is preferred
+                href={post.href || `/references/${post.slug}`}  
                 target={post.href ? "_blank" : undefined}
                 className={cn(
                     "block py-3",
@@ -43,7 +43,6 @@ export function ReferenceCard({ post, isLast }: { post: Reference; isLast?: bool
                     </StackVertical>
                 </article>
             </Link>
-            {/* Separator line with reduced top margin */}
             {!isLast && (
                 <hr className="border-gray-500/20 mt-3" />
             )}

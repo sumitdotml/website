@@ -1,19 +1,19 @@
 'use client'
 
-import { IndividualPageFooter } from "@/common-components/footer/IndividualPageFooter"
-import Text from "@/common-components/text/text"
-import TextHeading from "@/common-components/text-heading/text-heading"
-import BaseContainer from "@/common-components/base-container/base-container"
-import { StackVertical } from "@/common-components/layout-stack/layout-stack"
+import { IndividualPageFooter } from "@/components/layout/footer/IndividualPageFooter"
+import Text from "@/components/ui/text/text"
+import TextHeading from "@/components/ui/text-heading/text-heading"
+import BaseContainer from "@/components/layout/container/base-container"
+import { StackVertical } from "@/components/layout/layout-stack/layout-stack"
 
-import { List, ListItem } from "@/common-components/list/list"
+import { List, ListItem } from "@/components/ui/list/list"
 
-import Callout from "@/common-components/callout/callout"
-import Ruler from "@/common-components/ruler/ruler"
-import { DynamicBreadcrumb } from "@/common-components/breadcrumb/breadcrumb"
+import Callout from "@/components/blocks/callout/callout"
+import Ruler from "@/components/ui/ruler/ruler"
+import { DynamicBreadcrumb } from "@/components/ui/primitives/breadcrumb"
 import Link from "next/link"
 import { SECTION_IDS } from "./section-ids"
-import { ThemeToggle } from "@/components/ui/theme-toggle"
+import { ThemeToggle } from "@/components/ui/theme/theme-toggle"
 
 export default function GettingStartedWithMLPost() {
   return (

@@ -1,12 +1,12 @@
 'use client'
 
-import { StackVertical } from "@/common-components/layout-stack/layout-stack";
-import BaseContainer from "@/common-components/base-container/base-container";
-import TextHeading from "@/common-components/text-heading/text-heading";
-import Text from "@/common-components/text/text";
-import { IndividualPageFooter } from "@/common-components/footer/IndividualPageFooter";
-import { DynamicBreadcrumb } from "@/common-components/breadcrumb/breadcrumb";
-import { ThemeToggle } from "@/styles/components/ui/theme-toggle";
+import { StackVertical } from "@/components/layout/layout-stack/layout-stack";
+import BaseContainer from "@/components/layout/container/base-container";
+import TextHeading from "@/components/ui/text-heading/text-heading";
+import Text from "@/components/ui/text/text";
+import { IndividualPageFooter } from "@/components/layout/footer/IndividualPageFooter";
+import { DynamicBreadcrumb } from "@/components/ui/primitives/breadcrumb";
+import { ThemeToggle } from "@/components/ui/theme/theme-toggle";
 import Link from "next/link";
 
 export default function MathReferences() {

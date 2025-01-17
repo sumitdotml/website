@@ -1,8 +1,8 @@
-import { StackVertical } from "@/common-components/layout-stack/layout-stack"
-import Text from "@/common-components/text/text"
-import TextHeading from "@/common-components/text-heading/text-heading"
-import { DynamicBreadcrumb } from "@/common-components/breadcrumb/breadcrumb"
-import { ThemeToggle } from "@/styles/components/ui/theme-toggle"
+import { StackVertical } from "@/components/layout/layout-stack/layout-stack"
+import Text from "@/components/ui/text/text"
+import TextHeading from "@/components/ui/text-heading/text-heading"
+import { DynamicBreadcrumb } from "@/components/ui/primitives/breadcrumb"
+import { ThemeToggle } from "@/components/ui/theme/theme-toggle"
 
 export function BlogHeader() {
     return (
