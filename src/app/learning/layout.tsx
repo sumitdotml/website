@@ -2,10 +2,20 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
     title: 'My Learnings | sumit.ml',
-    description: 'A collection of my learning: weekly reflections, materials I use, and more.',
+    description: 'My journey of learning ML and Math, documented week by week',
+    openGraph: {
+        title: 'My Learnings | sumit.ml',
+        description: 'My journey of learning ML and Math, documented week by week',
+        type: 'website',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'My Learnings | sumit.ml',
+        description: 'My journey of learning ML and Math, documented week by week',
+    }
 }
 
-export default function Learning({
+export default function Layout({
     children,
 }: {
     children: React.ReactNode
