@@ -1,12 +1,11 @@
-import { Reference } from "../_types/reference"
+import { NotesTypes } from "../_types/note-types"
 
-export const references: Reference[] = [
+export const notes: NotesTypes[] = [
     {
         id: 1,
         title: "Math References",
         description: "Formulas from my math learning journey for quick reference.",
         lastUpdated: "January 14, 2025",
-        slug: "math",
         href: "https://sumitdotml.notion.site/math"
     },
     {
@@ -14,6 +13,13 @@ export const references: Reference[] = [
         title: "PyTorch References",
         description: "PyTorch code snippets that I've used & learned from for quick reference.",
         lastUpdated: "January 16, 2025",
-        slug: "pytorch"
+        href: "/notes/pytorch"
+    },
+    {
+        id: 3,
+        title: "Books",
+        description: "Notes and summaries from the books I'm reading to learn ML and Math.",
+        lastUpdated: "January 14, 2025",
+        href: "/notes/books"
     }
 ] 

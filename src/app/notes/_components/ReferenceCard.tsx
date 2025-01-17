@@ -6,11 +6,13 @@ import TextHeading from "@/components/ui/text-heading/text-heading"
 import { Reference } from "../_types/reference"
 
 export function ReferenceCard({ post, isLast }: { post: Reference; isLast?: boolean }) {
+    const isExternalLink = post.href.startsWith('http')
+    
     return (
         <div className="group">
             <Link 
-                href={post.href || `/references/${post.slug}`}  
-                target={post.href ? "_blank" : undefined}
+                href={post.href}
+                target={isExternalLink ? "_blank" : undefined}
                 className={cn(
                     "block py-3",
                     "transition-all duration-300",

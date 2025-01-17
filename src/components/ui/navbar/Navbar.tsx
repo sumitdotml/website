@@ -37,8 +37,7 @@ export function Navbar() {
         { href: '/about', label: 'About' },
         { href: '/blog', label: 'Blog' },
         { href: '/learning', label: 'Learning' },
-        { href: '/notes', label: 'Notes' },
-        { href: '/references', label: 'References' }
+        { href: '/notes', label: 'Notes' }
     ]
 
     // Close menu when clicking outside

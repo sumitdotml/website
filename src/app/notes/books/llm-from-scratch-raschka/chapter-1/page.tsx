@@ -34,7 +34,7 @@ export default function Chapter1() {
         </StackVertical>
       </BaseContainer>
 
-      <IndividualPageFooter parentPageName='LLM Book' />
+      <IndividualPageFooter parentPageName='LLM Book' showToTop={false}/>
     </>
   )
 }

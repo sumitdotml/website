@@ -16,7 +16,7 @@ export default function PyTorchReferences() {
 					<DynamicBreadcrumb
 						items={[
 							{ href: "/", label: "Home", emoji: "👾" },
-							{ href: "/references", label: "References" },
+							{ href: "/notes", label: "Notes" },
 							{ label: "PyTorch" },
 						]}
 					/>
@@ -28,7 +28,7 @@ export default function PyTorchReferences() {
 			</StackVertical>
 
 			<IndividualPageFooter
-				parentPageName="References"
+				parentPageName="Notes"
 				showToTop={true}
 			/>
 		</BaseContainer>

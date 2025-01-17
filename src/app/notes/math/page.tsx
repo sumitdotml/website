@@ -18,7 +18,7 @@ export default function MathReferences() {
                         <DynamicBreadcrumb
                         items={[
                             { href: '/', label: 'Home', emoji: '👾' },
-                            { href: '/references', label: 'References' },
+                            { href: '/notes', label: 'Notes' },
                             { label: 'Math' }
                         ]}
                     />
@@ -39,7 +39,7 @@ export default function MathReferences() {
                 </StackVertical>    
             </BaseContainer>
 
-            <IndividualPageFooter sectionName="References" showToTop={false} />
+            <IndividualPageFooter sectionName="Notes" showToTop={false} />
 
         </>
     )
