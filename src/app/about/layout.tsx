@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-    title: 'About Me | sumit.ml',
-    description: 'things about me in more detail',
+    title: 'My Novice Journey\'s Monologue | sumit.ml',
+    description: 'I don\'t really know what I\'m doing',
 }
 
 export default function Layout({

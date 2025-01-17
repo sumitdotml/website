@@ -1,1 +1,2 @@
 Home | sumit.ml
+Sumit's personal website - A place where I document my learning journey in ML and Math
