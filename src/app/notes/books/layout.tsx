@@ -1,11 +1,21 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-    title: 'Books | sumit.ml',
-    description: 'A collection of books I\'ve read and taken notes on.',
+    title: 'Books | Notes | sumit.ml',
+    description: 'Notes and summaries from the books I\'m reading to learn ML and Math',
+    openGraph: {
+        title: 'Books | Notes | sumit.ml',
+        description: 'Notes and summaries from the books I\'m reading to learn ML and Math',
+        type: 'website',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Books | Notes | sumit.ml',
+        description: 'Notes and summaries from the books I\'m reading to learn ML and Math',
+    }
 }
 
-export default function Books({
+export default function Layout({
     children,
 }: {
     children: React.ReactNode
