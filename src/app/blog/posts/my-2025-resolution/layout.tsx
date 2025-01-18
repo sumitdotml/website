@@ -11,8 +11,8 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'My 2025 Resolution: Beyond the Roadmaps | sumit.ml',
-        description: 'Beyond the Roadmaps, Beyond the Timelines - A reflection on learning efficiency',
+        title: 'My 2025 Resolution: Beyond the Roadmaps, Beyond the Timelines',
+        description: 'A reflection on learning efficiency',
     }
 }
 

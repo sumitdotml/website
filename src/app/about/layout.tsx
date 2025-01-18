@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'My Novice Journey\'s Monologue | sumit.ml',
+        title: 'My Novice Journey: A Monologue',
         description: 'I don\'t really know what I\'m doing',
     }
 }
