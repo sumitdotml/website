@@ -188,3 +188,19 @@ Parameters
 [documentation](https://pytorch.org/docs/stable/generated/torch.cat.html)
 
 Concatenates the given sequence of seq tensors in the given dimension. All tensors must either have the same shape (except in the concatenating dimension) or be a 1-D empty tensor with size (0,).
+
+---
+
+## torch.inference_mode()
+
+[tweet](https://x.com/PyTorch/status/1437838231505096708)
+
+From PyTorch:
+
+`inference_mode()` is `torch.no_grad()` on steroids.
+
+![inference-mode image](/pytorch/inference_mode.png)
+
+_Screenshot taken from PyTorch's official tweet made on Sep 25, 2021. [Link](https://x.com/PyTorch/status/1437838236529868803)._
+
+While NoGrad excludes operations from being tracked by Autograd, InferenceMode takes that two steps ahead, potentially speeding up your code (YMMV depending on model complexity and hardware).
