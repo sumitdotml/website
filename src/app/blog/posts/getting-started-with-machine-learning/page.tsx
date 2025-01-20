@@ -35,7 +35,7 @@ export default function GettingStartedWithMLPost() {
           <article id={SECTION_IDS.ARTICLE_CONTENT}>
 
             <TextHeading as="h1">Getting Started with Machine Learning</TextHeading>
-            <Text variant="muted" size="xs" className="mb-8">December 16, 2024 | 10 min read</Text>
+            <Text variant="muted" size="xs" className="mb-8">December 25, 2024 | 10 min read</Text>
 
               <section>
                 <StackVertical gap="md">

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
         title: 'PyTorch References | Notes | sumit.ml',
         description: 'PyTorch code snippets and examples from my learning journey',
         type: 'article',
-        publishedTime: '2025-01-16T00:00:00.000Z',
+        publishedTime: '2025-01-20T00:00:00.000Z',
     },
     twitter: {
         card: 'summary_large_image',

@@ -12,7 +12,7 @@ export const notes: NotesTypes[] = [
         id: 2,
         title: "PyTorch References",
         description: "PyTorch code snippets that I've used & learned from for quick reference.",
-        lastUpdated: "January 16, 2025",
+        lastUpdated: "January 20, 2025",
         href: "/notes/pytorch"
     },
     {
