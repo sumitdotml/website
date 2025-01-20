@@ -204,3 +204,71 @@ From PyTorch:
 _Screenshot taken from PyTorch's official tweet made on Sep 25, 2021. [Link](https://x.com/PyTorch/status/1437838236529868803)._
 
 While NoGrad excludes operations from being tracked by Autograd, InferenceMode takes that two steps ahead, potentially speeding up your code (YMMV depending on model complexity and hardware).
+
+---
+
+## nn.Linear
+
+[documentation](https://pytorch.org/docs/stable/generated/torch.nn.Linear.html)
+
+A module that applies an affine linear transformation to the incoming data. This transformation is represented by the formula `y = xA^T + b`, where `x` is the input, `A` is the weight, `b` is the bias, and `y` is the output.
+
+A really good example for this came up when I was trying to create a linear regression class. So, at first, I simply defined the parameters explicitly (the weight and the bias) using `nn.Parameter` like this:
+
+```python
+class LinearRegression(nn.Module):
+    def __init__(self):
+        super().__init__() 
+        self.weights = nn.Parameter(
+            torch.randn(1, dtype=torch.float),
+            requires_grad=True)
+
+        self.bias = nn.Parameter(
+            torch.randn(1, dtype=torch.float),
+            requires_grad=True)
+
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        return self.weights * x + self.bias
+```
+
+Pretty straightforward. We explicitly create and manage weight and bias parameters. In other words, the linear transformation has been defined explicitly. I believe this is easy to understand the underlying math.
+
+__On the other hand__, I could simply use `nn.Linear` to carry out the linear regression and leave the linear transformation and parameters' creation + management fo the `nn.Module` to handle on its own internally:
+
+```python
+class LinearRegression(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.linear_layer = nn.Linear(in_features=1, 
+                                    out_features=1)
+    
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        return self.linear_layer(x)
+```
+
+When I created a `nn.Linear` layer with `in_features=1` and `out_features=1`, it's creating:
+
+- A weight matrix of size (1, 1)
+- A bias vector of size (1)
+
+The forward pass through nn.Linear performs:
+
+```python
+output = input @ weight.t() + bias
+```
+
+Which, for my single-feature case, simplifies to exactly the same computation as the manual version from above:
+
+```python
+output = input * weight + bias
+```
+
+Which means? `nn.Linear` is essentially doing the same thing as the manual implementation, but in a more generalized and optimized way.
+
+The advantage of using `nn.Linear` becomes more apparent when working with:
+- Multiple input features
+- Multiple output features
+- Multiple layers
+- Batch processing
+
+In these cases, `nn.Linear` handles all the matrix operations and parameter management automatically, while the manual version would require significant additional code to handle these scenarios.
