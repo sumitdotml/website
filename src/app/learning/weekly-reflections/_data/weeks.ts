@@ -1,6 +1,10 @@
 export const weeks = [
+	{
+		title: 'Week 3, 2025 (Jan 13th - Jan 19th)',
+		href: '/learning/weekly-reflections/week-3'
+	},
 	{ 
-		title: 'Week 2, 2025 (Jan 6th - Jan 13th)',
+		title: 'Week 2, 2025 (Jan 6th - Jan 12th)',
 		href: '/learning/weekly-reflections/week-2'
 	},
 	{ 
