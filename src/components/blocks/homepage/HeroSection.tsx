@@ -113,7 +113,7 @@ export function HeroSection() {
 
                                 <Text>
                                     I also document my learnings through learning reflections every week. You can take a look at those{' '}
-                                    <Link href="/learning" className="text-purple-500 font-bold hover:underline">
+                                    <Link href="/learning/weekly-reflections" className="text-purple-500 font-bold hover:underline">
                                         here
                                     </Link>
                                     .
