@@ -12,16 +12,15 @@ npm install next-themes
 npm install prism-react-renderer
 ```
 
-## TODO
+## If you want to use this code for your own site
 
-- [ ] add metadata tags to individual sections (currently only the blog page has it)
-- [ ] add the learnings page with the books subdirectory with mdx (later)
+You are free to copy any part of this repository without worrying about anything. All I ask of you is to star this repository if you found it useful. :)
 
 ## References
 
 Tools used: React, Next.js, Tailwind, TypeScript.
 
-Some components inside the [src/app/components/ui](src/app/styles/components/ui) are from [shadcn/ui](https://ui.shadcn.com/docs/):
+Some ui components are from [shadcn/ui](https://ui.shadcn.com/docs/):
 
 - [Breadcrumb](https://ui.shadcn.com/docs/components/breadcrumb)
 - [Button](https://ui.shadcn.com/docs/components/button)
