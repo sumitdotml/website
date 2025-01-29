@@ -9,7 +9,6 @@ export function BlogHeader() {
         <StackVertical gap="md">
             <title>Blog | sumit.ml</title>
 
-            {/* Breadcrumb */}
             <div className="flex items-center justify-between">
                 <DynamicBreadcrumb 
                     items={[
@@ -20,7 +19,6 @@ export function BlogHeader() {
                 <ThemeToggle />
             </div>
 
-            {/* Header Content */}
             <div>
                 <TextHeading as="h1" weight="bold">
                     Blog

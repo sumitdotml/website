@@ -46,7 +46,6 @@ export function BlogCard({ post, isLast }: { post: BlogPost; isLast?: boolean })
                     </StackVertical>
                 </article>
             </Link>
-            {/* Separator line with reduced top margin */}
             {!isLast && (
                 <hr className="border-gray-500/20 mt-3" />
             )}

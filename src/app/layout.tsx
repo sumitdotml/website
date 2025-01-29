@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { ThemeProvider } from '@/components/ui/theme/theme-provider'
 import { cn } from '@/lib/utils/utils'
 import { Analytics } from "@vercel/analytics/react"
+import { monoFont, sansFont, codeFont } from '@/styles/fonts/fonts'
 
 export const metadata: Metadata = {
   title: 'sumit.ml',
@@ -15,7 +16,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="h-full" suppressHydrationWarning>
+    <html lang="en" className={cn(
+      "h-full",
+      monoFont.variable,
+      sansFont.variable,
+      codeFont.variable
+    )} suppressHydrationWarning>
       <body className={cn(
         "h-full bg-background transition-colors duration-300"
       )}>
@@ -29,7 +35,7 @@ export default function RootLayout({
             <div className="flex-1 flex flex-col">
               <main className="container mx-auto mt-4 px-4 flex-1">
                 {children}
-		<Analytics />
+                <Analytics />
               </main>
             </div>
           </div>

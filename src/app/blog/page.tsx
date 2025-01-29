@@ -26,7 +26,7 @@ export default function BlogListing() {
                     ))}
                 </StackVertical>
             </StackVertical>
-            <SectionFooter color="purple" showToTop={false} />
+            <SectionFooter showToTop={false} />
         </BaseContainer>
     )
 }

@@ -5,7 +5,7 @@ import Text from "@/components/ui/text/text"
 import TextHeading from "@/components/ui/text-heading/text-heading"
 import { NotesTypes } from "../_types/note-types"
 
-export function ReferenceCard({ post, isLast }: { post: NotesTypes; isLast?: boolean }) {
+export function NotesCard({ post, isLast }: { post: NotesTypes; isLast?: boolean }) {
     const isExternalLink = post.href.startsWith('http')
     
     return (

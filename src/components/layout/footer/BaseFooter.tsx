@@ -32,10 +32,26 @@ export function BaseFooter({
     ]
 
     return (
-        <footer className={cn("mt-auto pt-12", className)}>
-            {/* Super subtle gradient line */}
+        <footer className={cn("relative mt-auto pt-12", className)}>
+            {/* Gradient Line */}
             <div className="relative w-full mb-8">
-                <div className="absolute inset-0 w-full h-[1px] bg-gradient-to-r from-transparent via-purple-400/20 to-transparent" />
+                <div className={cn(
+                    "absolute inset-0 w-full",
+                    "h-[1px]",
+                    "bg-gradient-to-r",
+                    color === 'purple' && [
+                        "from-transparent via-purple-500/30 to-transparent",
+                        "dark:via-purple-400/30"
+                    ],
+                    color === 'blue' && [
+                        "from-transparent via-blue-500/30 to-transparent",
+                        "dark:via-blue-400/30"
+                    ],
+                    color === 'green' && [
+                        "from-transparent via-green-500/30 to-transparent",
+                        "dark:via-green-400/30"
+                    ]
+                )} />
             </div>
 
             <div className={cn(

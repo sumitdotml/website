@@ -2,7 +2,7 @@ import { NotesTypes } from "../_types/note-types"
 
 export const notes: NotesTypes[] = [
     {
-        id: 1,
+        id: 3,
         title: "Math References",
         description: "Formulas from my math learning journey for quick reference.",
         lastUpdated: "January 14, 2025",
@@ -16,7 +16,7 @@ export const notes: NotesTypes[] = [
         href: "/notes/pytorch"
     },
     {
-        id: 3,
+        id: 1,
         title: "Books",
         description: "Notes and summaries from the books I'm reading to learn ML and Math.",
         lastUpdated: "January 14, 2025",

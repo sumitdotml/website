@@ -1,7 +1,7 @@
 'use client'
 
 import { cn } from '@/lib/utils/utils'
-import { monoFont } from '@/styles/fonts/fonts'
+import { codeFont } from '@/styles/fonts/fonts'
 import { Highlight } from 'prism-react-renderer'
 import { useTheme } from 'next-themes'
 import { useState } from 'react'
@@ -23,79 +23,79 @@ const CopyButton = ({ code, language }: { code: string; language?: string }) => 
     };
 
     return (
-        <>
-            <button
-                onClick={copy}
-                className={cn(
-                    "absolute top-3 right-3",
-                    "p-1.5 rounded-md",
-                    "transition-all duration-300 ease-in-out",
-                    "hover:bg-purple-500/10",
-                    "z-10",
-                    copied 
-                        ? isDark
-                            ? "text-purple-400"
-                            : "text-[#8839ef]"
-                        : "text-gray-400 hover:text-purple-400"
-                )}
-                aria-label="Copy code"
-            >
-                <div className="relative w-3.5 h-3.5 sm:w-4 sm:h-4">
-                    <div className={cn(
-                        "absolute inset-0 transform transition-all duration-300",
-                        copied 
-                            ? "opacity-0 rotate-45 scale-0" 
-                            : "opacity-100 rotate-0 scale-100"
-                    )}>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
-                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
-                        </svg>
-                    </div>
-                    <div className={cn(
-                        "absolute inset-0 transform transition-all duration-300",
-                        copied 
-                            ? "opacity-100 rotate-0 scale-100" 
-                            : "opacity-0 -rotate-45 scale-0"
-                    )}>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                            <polyline points="20 6 9 17 4 12" />
-                        </svg>
-                    </div>
-                </div>
-            </button>
-            <div className="absolute top-3 right-3 flex items-center">
-                {language && (
-                    <div className={cn(
-                        "px-2 py-1.5 rounded-md mr-8",
-                        "text-[10px] sm:text-xs font-medium uppercase tracking-wider",
-                        "transition-all duration-300",
-                        copied
-                            ? "opacity-0 translate-x-4"
-                            : "opacity-100 translate-x-0",
-                        isDark 
-                            ? "text-gray-400" 
-                            : "text-gray-500"
-                    )}>
-                        {language}
-                    </div>
-                )}
+        <div className="flex items-center justify-between w-full">
+            {/* Language tag */}
+            {language && (
                 <div className={cn(
-                    "absolute right-8",
+                    "font-medium uppercase tracking-wider",
                     "text-[10px] sm:text-xs",
                     "transition-all duration-300",
-                    "pointer-events-none",
+                    "opacity-60 group-hover:opacity-100",
+                    isDark 
+                        ? "text-gray-300" 
+                        : "text-gray-600"
+                )}>
+                    {language}
+                </div>
+            )}
+            
+            {/* Copy button with status */}
+            <div className="flex items-center">
+                <div className={cn(
+                    "text-[10px]",
+                    "transition-all duration-300",
+                    "h-5 flex items-center",
                     isDark
                         ? "text-purple-400"
                         : "text-[#8839ef]",
                     copied
-                        ? "opacity-100 translate-x-0"
-                        : "opacity-0 translate-x-4"
+                        ? "w-12 opacity-100"
+                        : "w-0 opacity-0"
                 )}>
-                    COPIED!
+                    <span className="px-1">COPIED</span>
                 </div>
+                <button
+                    onClick={copy}
+                    className={cn(
+                        "p-1 -mr-1",
+                        "rounded-md",
+                        "transition-all duration-300 ease-in-out",
+                        "hover:bg-purple-500/10",
+                        "opacity-60 hover:opacity-100",
+                        copied 
+                            ? isDark
+                                ? "text-purple-400"
+                                : "text-[#8839ef]"
+                            : "text-gray-400 hover:text-purple-400"
+                    )}
+                    aria-label="Copy code"
+                >
+                    <div className="relative w-4 h-4">
+                        <div className={cn(
+                            "absolute inset-0 transform transition-all duration-300",
+                            copied 
+                                ? "opacity-0 rotate-45 scale-0" 
+                                : "opacity-100 rotate-0 scale-100"
+                        )}>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                            </svg>
+                        </div>
+                        <div className={cn(
+                            "absolute inset-0 transform transition-all duration-300",
+                            copied 
+                                ? "opacity-100 rotate-0 scale-100" 
+                                : "opacity-0 -rotate-45 scale-0"
+                        )}>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                        </div>
+                    </div>
+                </button>
             </div>
-        </>
+        </div>
     );
 };
 
@@ -144,7 +144,6 @@ const getTheme = (isDark: boolean) => ({
 
 export default function CodeBlock({ code, language, className }: CodeBlockProps) {
     const { theme: currentTheme } = useTheme();
-    // Provide a fallback theme based on system preference
     const isDark = currentTheme === 'dark' || (
         !currentTheme && 
         typeof window !== 'undefined' && 
@@ -161,20 +160,36 @@ export default function CodeBlock({ code, language, className }: CodeBlockProps)
                 : "bg-[#f8f9fc] border-[#e6e9ef]",
             className
         )}>
+            {/* Header */}
+            <div className={cn(
+                "group",
+                "flex items-center",
+                "px-3 py-1",
+                "border-b",
+                "font-code",
+                isDark
+                    ? "border-[#313244] bg-[#1e1e2e]/30"
+                    : "border-[#e6e9ef] bg-[#f8f9fc]/30"
+            )}>
+                <CopyButton code={code} language={language} />
+            </div>
+
+            {/* Code Content */}
             <Highlight
                 theme={getTheme(isDark)}
                 code={code}
                 language={language}
             >
-                {({ className, style, tokens, getLineProps, getTokenProps }) => (
+                {({ className: highlightClassName, style, tokens, getLineProps, getTokenProps }) => (
                     <pre 
                         className={cn(
-                            className,
-                            monoFont.className,
+                            highlightClassName,
+                            "font-code",
                             "overflow-x-auto whitespace-pre-wrap break-words",
                             "transition-colors duration-200",
                             "p-4",
-                            "text-[13px] sm:text-sm",
+                            "text-[13px] sm:text-sm leading-relaxed",
+                            "tracking-tight font-medium",
                             isDark
                                 ? "bg-[#1e1e2e]"
                                 : "bg-[#f8f9fc]"
@@ -191,7 +206,6 @@ export default function CodeBlock({ code, language, className }: CodeBlockProps)
                     </pre>
                 )}
             </Highlight>
-            <CopyButton code={code} language={language} />
         </div>
     );
 } 

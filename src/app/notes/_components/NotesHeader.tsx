@@ -4,7 +4,7 @@ import TextHeading from "@/components/ui/text-heading/text-heading"
 import { DynamicBreadcrumb } from "@/components/ui/primitives/breadcrumb"
 import { ThemeToggle } from "@/components/ui/theme/theme-toggle"
 
-export function ReferenceHeader() {
+export function NotesHeader() {
     return (
         <StackVertical gap="md">
             <title>Notes | sumit.ml</title>
