@@ -13,7 +13,6 @@ export default function Learning() {
     return (
         <BaseContainer size="md" paddingX="md" paddingY="lg">
             <StackVertical gap="md">
-                {/* Breadcrumb */}
                 <div className="flex items-center justify-between">
                     <DynamicBreadcrumb 
                         items={[
@@ -24,7 +23,6 @@ export default function Learning() {
                     <ThemeToggle />
                 </div>
 
-                {/* Header Content */}
                 <div>
                 <TextHeading as="h1" weight="bold">
                     Learning
@@ -34,12 +32,28 @@ export default function Learning() {
                 </Text>
 
                 <StackVertical gap="md">
-                    <Text className="underline font-bold hover:text-purple-500">
-                        <Link href="/learning/weekly-reflections/">Weekly Reflections</Link> 
-                    </Text>
-                    <Text className="underline font-bold hover:text-purple-500">
-                        <Link href="/learning/learning-utensils/">Learning Utensils</Link>
-                    </Text>
+                    <Link 
+                        href="/learning/weekly-reflections/"
+                        className="group"
+                    >
+                        <Text 
+                            size="md" 
+                            className="underline font-bold transition-colors duration-200 group-hover:text-purple-500"
+                        >
+                            Weekly Reflections
+                        </Text>
+                    </Link>
+                    <Link 
+                        href="/learning/learning-utensils/"
+                        className="group"
+                    >
+                        <Text 
+                            size="md" 
+                            className="underline font-bold transition-colors duration-200 group-hover:text-purple-500"
+                        >
+                            Learning Utensils
+                        </Text>
+                    </Link>
                 </StackVertical>
             </div>
             </StackVertical>
