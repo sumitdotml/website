@@ -2,13 +2,9 @@
 
 A minimalistic personal blog and learning documentation website built with Next.js, Tailwind, and TypeScript.
 
-#
-
 ## Want to use this code for your own site?
 
 You are free to copy any part of this repository or even the entire thing. All I ask of you is to star this repository if you found it useful and maybe provide some credit & shoutout if you're feeling kind (but you don't have to if your vibes are not into these) :)
-
-#
 
 ## Installation
 
@@ -44,9 +40,7 @@ http://localhost:3000
 
 You may run into some issues when doing `npm install` because of the dependencies. You can always ask our AI friends to help you out. :)
 
-If there are any errors, issues or suggestions, please feel free to open an issue.
-
-#
+If there are any errors, issues or suggestions, please feel free to [open a new issue](https://github.com/sumitdotml/website/issues/new).
 
 ## Tools used
 
@@ -58,8 +52,6 @@ Some ui components are from [shadcn/ui](https://ui.shadcn.com/docs/):
 - [Accordion](https://ui.shadcn.com/docs/components/accordion)
 - [Separator](https://ui.shadcn.com/docs/components/separator)
 - [Hover Card](https://ui.shadcn.com/docs/components/hover-card)
-
-#
 
 ## To-Do
 
