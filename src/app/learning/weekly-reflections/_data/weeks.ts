@@ -11,6 +11,11 @@ interface MonthGroup {
 
 const weeks: Week[] = [
 	{
+		title: 'Week 7, 2025 (Feb 10 - Feb 16)',
+		href: '/learning/weekly-reflections/week-7',
+		date: new Date('2025-02-16')
+	},
+	{
 		title: 'Week 6, 2025 (Feb 3 - Feb 9)',
 		href: '/learning/weekly-reflections/week-6',
 		date: new Date('2025-02-09')
@@ -42,7 +47,6 @@ const weeks: Week[] = [
 	}
 ]
 
-// Group weeks by month
 export function getWeeksByMonth(): MonthGroup[] {
 	const groupedWeeks = weeks.reduce((acc: { [key: string]: Week[] }, week) => {
 		const monthYear = week.date.toLocaleString('en-US', { month: 'long', year: 'numeric' });
@@ -57,7 +61,6 @@ export function getWeeksByMonth(): MonthGroup[] {
 		month,
 		weeks
 	})).sort((a, b) => {
-		// Sort months in reverse chronological order
 		const [aMonth, aYear] = a.month.split(' ');
 		const [bMonth, bYear] = b.month.split(' ');
 		if (aYear !== bYear) return parseInt(bYear) - parseInt(aYear);

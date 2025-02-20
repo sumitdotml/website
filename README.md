@@ -1,24 +1,54 @@
 # Website for my blog
 
-## Installations
+A minimalistic personal blog and learning documentation website built with Next.js, Tailwind, and TypeScript.
+
+#
+
+## Want to use this code for your own site?
+
+You are free to copy any part of this repository or even the entire thing. All I ask of you is to star this repository if you found it useful and maybe provide some credit & shoutout if you're feeling kind (but you don't have to if your vibes are not into these) :)
+
+#
+
+## Installation
+
+1. Clone the repository
 
 ```bash
-npx create-next-app@latest
+git clone https://github.com/sumitdotml/website.git
 ```
+
+2. Go to the project directory
 
 ```bash
-npm install framer-motion
-npm install next-themes
-npm install prism-react-renderer
+cd website
 ```
 
-## If you want to use this code for your own site
+3. Install dependencies
 
-You are free to copy any part of this repository without worrying about anything. All I ask of you is to star this repository if you found it useful. :)
+```bash
+npm install
+```
 
-## References
+4. Run the development server
 
-Tools used: React, Next.js, Tailwind, TypeScript.
+```bash
+npm run dev
+```
+
+5. Open the website in your browser
+
+```bash
+http://localhost:3000
+```
+
+You may run into some issues when doing `npm install` because of the dependencies. You can always ask our AI friends to help you out. :)
+
+If there are any errors, issues or suggestions, please feel free to open an issue.
+
+#
+
+## Tools used
 
 Some ui components are from [shadcn/ui](https://ui.shadcn.com/docs/):
 
@@ -28,3 +58,12 @@ Some ui components are from [shadcn/ui](https://ui.shadcn.com/docs/):
 - [Accordion](https://ui.shadcn.com/docs/components/accordion)
 - [Separator](https://ui.shadcn.com/docs/components/separator)
 - [Hover Card](https://ui.shadcn.com/docs/components/hover-card)
+
+#
+
+## To-Do
+
+- [ ] Make the navbar sticky for mobile and make the navbar move its original Y position a little higher and stick to the very top when the user scrolls down
+- [ ] Add a search bar
+- [ ] Add a graph visualization (similar to the [Obsidian graph view](https://help.obsidian.md/Plugins/Graph+view))
+- [ ] Add a "On this page" (like a ToC) section to the top right of the page in the PC version. It should be hidden on mobile.
