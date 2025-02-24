@@ -12,8 +12,8 @@ import CodeBlock from '@/components/blocks/code-block/code-block'
 import Math from '@/components/ui/math/math'
 
 // Helper function to process text and wrap math expressions
-const processMathInText = (text: string): (string | JSX.Element)[] => {
-  const parts: (string | JSX.Element)[] = []
+const processMathInText = (text: string): (string | React.ReactElement)[] => {
+  const parts: (string | React.ReactElement)[] = []
   let currentText = ''
   let inMath = false
   let isBlock = false

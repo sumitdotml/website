@@ -4,7 +4,7 @@ export const blogPosts: BlogPost[] = [
     {
         id: 3,
         title: "Autograd Logic",
-        description: "Autograd Logic",
+        description: "the logic behind how autograd links to optimization through loss minimization",
         date: "February 24, 2025",
         readingTime: "15 min read",
         slug: "autograd-logic"
