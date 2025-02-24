@@ -2,6 +2,14 @@ import { BlogPost } from "../_types/blog"
 
 export const blogPosts: BlogPost[] = [
     {
+        id: 3,
+        title: "Autograd Logic",
+        description: "Autograd Logic",
+        date: "February 24, 2025",
+        readingTime: "15 min read",
+        slug: "autograd-logic"
+    },
+    {
         id: 2,
         title: "My 2025 Resolution: Beyond the Roadmaps, Beyond the Timelines",
         description: "A week of self-reflection on my 2025 plan, and how I plan to elevate my knowledge fabric.",
