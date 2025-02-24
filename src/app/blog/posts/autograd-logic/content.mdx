@@ -78,7 +78,7 @@ L.backward()
 
 I thought the leaf nodes were x and y. That was incorrect. The leaf node is only x, not y. 
 
-<Callout variant="purple" title="So what is a leaf node?">Often used loosely alongside the term "leaf node tensors", leaf nodes are tensors created directly (like `x` in their example) without being the result of an operation. Intermediates (like `y` and `L`) are not leaf node tensors.</Callout>
+<Callout variant="green" title="So what is a leaf node?">Often used loosely alongside the term "leaf node tensors", leaf nodes are tensors created directly (like x in my example) without being the result of an operation. Intermediates (like y and L) are not leaf node tensors.</Callout>
 
 Here, I am counting `y` as a parameter as well, but our issue here is that it is not a leaf node but rather an intermediary. But since we need its gradient as well, we need to do `retain_grad=True` so that its gradient also gets tracked by the engine. The `requires_grad=True` is not necessary for intermediaries.
 
