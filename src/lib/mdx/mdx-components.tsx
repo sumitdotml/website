@@ -1,5 +1,6 @@
 'use client'
 
+import React from 'react'
 import { MDXComponents } from 'mdx/types'
 import TextHeading from '@/components/ui/text-heading/text-heading'
 import Text from '@/components/ui/text/text'
@@ -8,6 +9,63 @@ import Ruler from '@/components/ui/ruler/ruler'
 import { cn } from '@/lib/utils/utils'
 import { monoFont } from '@/styles/fonts/fonts'
 import CodeBlock from '@/components/blocks/code-block/code-block'
+import Math from '@/components/ui/math/math'
+
+// Helper function to process text and wrap math expressions
+const processMathInText = (text: string): (string | JSX.Element)[] => {
+  const parts: (string | JSX.Element)[] = []
+  let currentText = ''
+  let inMath = false
+  let isBlock = false
+  let mathContent = ''
+
+  const pushCurrentText = () => {
+    if (currentText) {
+      parts.push(currentText)
+      currentText = ''
+    }
+  }
+
+  for (let i = 0; i < text.length; i++) {
+    if (text[i] === '$') {
+      if (i + 1 < text.length && text[i + 1] === '$') {
+        // Block math ($$)
+        if (!inMath) {
+          pushCurrentText()
+          inMath = true
+          isBlock = true
+          i++ // Skip second $
+        } else if (isBlock) {
+          parts.push(<Math key={parts.length} math={mathContent} block={true} />)
+          mathContent = ''
+          inMath = false
+          isBlock = false
+          i++ // Skip second $
+        }
+      } else {
+        // Inline math ($)
+        if (!inMath) {
+          pushCurrentText()
+          inMath = true
+          isBlock = false
+        } else if (!isBlock) {
+          parts.push(<Math key={parts.length} math={mathContent} block={false} />)
+          mathContent = ''
+          inMath = false
+        }
+      }
+    } else {
+      if (inMath) {
+        mathContent += text[i]
+      } else {
+        currentText += text[i]
+      }
+    }
+  }
+
+  pushCurrentText()
+  return parts
+}
 
 export const mdxComponents: MDXComponents = {
     // Headings
@@ -33,11 +91,20 @@ export const mdxComponents: MDXComponents = {
     ),
 
     // Paragraph
-    p: ({ children }) => (
-        <Text className="mb-4 text-foreground dark:text-foreground">
-            {children}
-        </Text>
-    ),
+    p: ({ children }) => {
+        if (typeof children === 'string') {
+            return (
+                <Text className="mb-4 text-foreground dark:text-foreground">
+                    {processMathInText(children)}
+                </Text>
+            )
+        }
+        return (
+            <Text className="mb-4 text-foreground dark:text-foreground">
+                {children}
+            </Text>
+        )
+    },
 
     // Lists
     ul: ({ children }) => (
