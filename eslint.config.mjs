@@ -9,7 +9,12 @@ const __dirname = path.dirname(__filename);
 /** @type {import('eslint').Linter.FlatConfig[]} */
 const eslintConfig = [
   {
-    extends: ['eslint:recommended', 'plugin:react/recommended', 'next/core-web-vitals'],
+    files: ["**/*.{js,mjs,cjs,jsx,ts,tsx}"],
+    languageOptions: {
+      ecmaVersion: 2022,
+      sourceType: "module",
+      jsx: true,
+    },
     rules: {
       'react/no-unescaped-entities': 'off',
       '@next/next/no-page-custom-font': 'off',

@@ -4,11 +4,22 @@ import { Metadata } from 'next'
 import WeekPage from './week-page'
 import matter from 'gray-matter'
 
-export async function generateMetadata({ params, searchParams }: {
-  params: { week: string }
-  searchParams?: { week?: string }
-}): Promise<Metadata> {
-  const weekParam = searchParams?.week || params.week
+// Define page props interface
+interface PageParams {
+  params: Promise<{
+    week: string;
+  }>;
+  searchParams?: Promise<{
+    week?: string;
+  }>;
+}
+
+export async function generateMetadata({ params, searchParams }: PageParams): Promise<Metadata> {
+  // Await params since it's a Promise in Next.js 15
+  const resolvedParams = await params;
+  const resolvedSearchParams = searchParams ? await searchParams : undefined;
+  
+  const weekParam = resolvedSearchParams?.week || resolvedParams.week as string;
   const weekNumber = parseInt(weekParam.replace('week-', ''), 10)
   
   // Read the MDX file to get the year
@@ -53,10 +64,11 @@ export async function generateStaticParams() {
     : []
 }
 
-export default function Page({ params, searchParams }: {
-  params: { week: string }
-  searchParams?: { week?: string }
-}) {
-  const weekParam = searchParams?.week || params.week
+export default async function Page({ params, searchParams }: PageParams) {
+  // Await params since it's a Promise in Next.js 15
+  const resolvedParams = await params;
+  const resolvedSearchParams = searchParams ? await searchParams : undefined;
+  
+  const weekParam = resolvedSearchParams?.week || resolvedParams.week as string;
   return <WeekPage weekParam={weekParam} />
 }

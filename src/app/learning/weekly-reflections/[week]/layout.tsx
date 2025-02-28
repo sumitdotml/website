@@ -1,6 +1,13 @@
 import { Metadata } from 'next'
 import { weeks } from '../_data/weeks'
-import { LayoutProps } from 'next/types'
+
+// Define the params type for the layout
+interface LayoutParams {
+  params: Promise<{
+    week: string;
+  }>;
+  children: React.ReactNode;
+}
 
 // Helper to format date range for a given week number
 function getDateRangeForWeek(weekNum: number) {
@@ -14,7 +21,7 @@ function getDateRangeForWeek(weekNum: number) {
   return 'Unknown date range'
 }
 
-export async function generateMetadata({ params }: LayoutProps): Promise<Metadata> {
+export async function generateMetadata({ params }: LayoutParams): Promise<Metadata> {
   // Await the params since it's a Promise in Next.js 15
   const resolvedParams = await params;
   const weekParam = resolvedParams.week as string;
