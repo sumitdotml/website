@@ -7,7 +7,7 @@ const nextConfig = {
     return [
       {
         source: '/learning/weekly-reflections/week-:num',
-        destination: '/learning/weekly-reflections/weeks/week-:num',
+        destination: '/learning/weekly-reflections/[week]?week=week-:num',
       },
     ]
   },

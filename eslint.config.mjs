@@ -6,8 +6,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const compat = new FlatCompat({
-  // import.meta.dirname is available after Node.js v20.11.0
-  baseDirectory: import.meta.dirname,
+  // Use __dirname instead of import.meta.dirname for compatibility
+  baseDirectory: __dirname,
 })
 const eslintConfig = [
   ...compat.config({

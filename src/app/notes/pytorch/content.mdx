@@ -1,3 +1,5 @@
+import Math from "@/components/ui/math/math"
+
 # Pytorch References
 
 ## torch.arange
@@ -211,7 +213,11 @@ While NoGrad excludes operations from being tracked by Autograd, InferenceMode t
 
 [documentation](https://pytorch.org/docs/stable/generated/torch.nn.Linear.html)
 
-A module that applies an affine linear transformation to the incoming data. This transformation is represented by the formula `y = xA^T + b`, where `x` is the input, `A` is the weight, `b` is the bias, and `y` is the output.
+A module that applies an affine linear transformation to the incoming data. This transformation is represented by the formula:
+
+<Math block math="y = xA^T + b" />
+
+where <Math math="x" /> is the input, <Math math="A" /> is the weight, <Math math="b" /> is the bias, and <Math math="y" /> is the output.
 
 A really good example for this came up when I was trying to create a linear regression class. So, at first, I simply defined the parameters explicitly (the weight and the bias) using `nn.Parameter` like this:
 

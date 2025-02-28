@@ -143,12 +143,30 @@ export const mdxComponents: MDXComponents = {
             return (
                 <code className={cn(
                     monoFont.className,
-                    "px-1.5 py-0.5 mx-0.5 my-0.5",
-                    "text-inherit",
-                    "bg-purple-100/80 dark:bg-purple-900/50",
-                    "text-purple-800 dark:text-purple-200",
-                    "rounded-md",
-                    "inline-block leading-normal"
+                    "relative px-[0.4em] mx-[0.1em]",
+                    "text-[0.9em]",
+                    // Enhanced split plane effect
+                    "bg-clip-text",
+                    "text-transparent",
+                    "bg-gradient-to-b from-purple-700 via-purple-800 to-purple-700",
+                    "dark:from-purple-200 dark:via-purple-300 dark:to-purple-200",
+                    // Enhanced inset effect with subtle glow
+                    "before:absolute before:-inset-[0.5px]",
+                    "before:bg-gradient-to-b",
+                    "before:from-purple-100/50 before:via-purple-100/30 before:to-transparent",
+                    "dark:before:from-purple-800/30 dark:before:via-purple-800/20 dark:before:to-transparent",
+                    "before:backdrop-blur-[0.25px]",
+                    "before:-z-10",
+                    // Enhanced side marker with gradient
+                    "after:absolute after:inset-y-[0.15em]",
+                    "after:left-0 after:w-[1.5px]",
+                    "after:bg-gradient-to-b after:from-purple-400 after:via-purple-500/50 after:to-purple-400",
+                    "dark:after:from-purple-300 dark:after:via-purple-400/40 dark:after:to-purple-300",
+                    "after:opacity-30 dark:after:opacity-20",
+                    // Subtle shadow for depth
+                    "shadow-[0_0_8px_-4px_rgba(147,51,234,0.1)]",
+                    "dark:shadow-[0_0_8px_-4px_rgba(216,180,254,0.1)]",
+                    "inline-block leading-tight"
                 )}>
                     {children}
                 </code>

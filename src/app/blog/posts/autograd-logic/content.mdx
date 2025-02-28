@@ -169,9 +169,7 @@ Now, let me try this exact same example but without using the `retain_grad()`:
 
 ```python
 >>> a = torch.tensor([1.0], requires_grad=True)
-
 >>> b = a * 2.0
-
 # Note that I did not do b.retain_grad() here
 
 >>> c = b + 1
