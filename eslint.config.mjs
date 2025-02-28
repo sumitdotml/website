@@ -1,22 +1,20 @@
-import { dirname } from "path";
+// eslint.config.mjs
+import path from "path";
 import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
 
+// Convert URL to path
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const __dirname = path.dirname(__filename);
 
-const compat = new FlatCompat({
-  // Use __dirname instead of import.meta.dirname for compatibility
-  baseDirectory: __dirname,
-})
+/** @type {import('eslint').Linter.FlatConfig[]} */
 const eslintConfig = [
-  ...compat.config({
-    extends: ['next'],
+  {
+    extends: ['eslint:recommended', 'plugin:react/recommended', 'next/core-web-vitals'],
     rules: {
       'react/no-unescaped-entities': 'off',
       '@next/next/no-page-custom-font': 'off',
     },
-  }),
-]
+  },
+];
 
 export default eslintConfig;
