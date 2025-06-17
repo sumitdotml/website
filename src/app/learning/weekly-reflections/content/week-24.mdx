@@ -1,0 +1,182 @@
+import CodeBlock from "@/components/blocks/code-block/code-block";
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion/accordion";
+import Ruler from "@/components/ui/ruler/ruler";
+
+# Week 24, 2025 (Jun 9 - Jun 15)
+
+So, this week has been pretty busy for me in terms of work, and it brings no joy in admitting this but I had to do plenty of overtime work because of the current status of my team's project. I was handed out the biggest task I have ever been since I started working here, and it's been quite exciting but -- given the scale -- also quite challenging.
+
+One takeaway from this: I love programming, but I despise writing tests.
+
+For my weekly learning, I did try what I could, but personally, I think this has been an underwhelming one. Here's what I can all think of:
+
+- I've been trying to code a simple transformer using pure [Tinygrad](https://github.com/tinygrad/tinygrad). I have gotten into this habit lately of watching George Hotz streams and the way he programs, and I've kinda wanted to contribute to Tinygrad for a bit, so thought this would be a good way to get used to the library. Read some docs, watched some streams. Haven't completed writing the transformer yet ([current  progress](https://github.com/sumitdotml/transformer-with-tinygrad/)), but should be done soon. Frankly, think I've been a bit lazy. Not good enough.
+
+- Solved 2 [Deep-ML](https://www.deep-ml.com/) problems. Been very fun, but I was supposed to do one each day... not good enough.
+
+- Studied KV Cache via the latest KV Cache pull request I saw in the [nanoVLM](https://github.com/huggingface/nanoVLM) repository. They're doing pretty good out there. Their [KV Cache blog](https://huggingface.co/blog/kv-cache) is pretty nice.
+
+- Coded a tic-tac-toe game in C++. This... does not sound very impressive but well, it did take me a little bit to craft the storing & pattern matching logic in this language. Was super fun.
+
+... and that's pretty much it.
+
+I saw that Sebastian Raschka dropped a new Substack post about coding KV Cache from scratch, so I'll do that this upcoming week. And among other things. See you next week!
+
+<Ruler color="colorless" marginTop="md" marginBottom="md" />
+
+<Accordion type="multiple" collapsible="true" className="w-full">
+	<AccordionItem value="item-1" className="border-none">
+		<AccordionTrigger className="text-md font-medium">Tic-tac-toe code if you wanna peek</AccordionTrigger>
+		<AccordionContent className="border-none">
+			<p>
+				`ttt-functions.h`
+			</p>
+			<CodeBlock code={`#include <iostream>
+#include <vector>
+
+bool check_for_win(std::vector<std::vector<int>> X);
+void draw_board(std::vector<std::vector<int>> board);
+`} language="cpp" className="w-full" />
+		</AccordionContent>
+		<AccordionContent>
+			<p>
+				`ttt-functions.cpp`
+			</p>
+			<CodeBlock code={`#include <iostream>
+#include <vector>
+
+bool check_for_win(std::vector<std::vector<int>> X) {
+  // lambda in c++ looks like this
+  auto same = [](int a, int b, int c) { return (a != 0 && a == b && b == c); };
+
+  // rows and cols
+  for (int i = 0; i < 3; i++) {
+    if (same(X[0][i], X[1][i], X[2][i]))
+      return true;
+    if (same(X[i][0], X[i][1], X[i][2]))
+      return true;
+  }
+  // diagonals
+  if (same(X[0][0], X[1][1], X[2][2]))
+    return true;
+  if (same(X[0][2], X[1][1], X[2][0]))
+    return true;
+
+  return false;
+}
+
+void draw_board(std::vector<std::vector<int>> board) {
+  auto mark = [](int v) -> char {
+    if (v == 1)
+      return 'O';
+    if (v == 2)
+      return 'X';
+    return ' ';
+  };
+
+  std::cout << "    1   2   3\n"
+            << "  +---+---+---+\n";
+
+  for (int r = 0; r < 3; ++r) {
+    std::cout << r + 1 << " |";
+    for (int c = 0; c < 3; ++c) {
+      std::cout << ' ' << mark(board[r][c]) << " |";
+    }
+    std::cout << "\n  +---+---+---+\n";
+  }
+}
+`} language="cpp" className="w-full" />
+		</AccordionContent>
+		<AccordionContent className="border-none">
+		<p>
+			`main.cpp`
+		</p>
+		<CodeBlock code={`// this is pretty redundant I think. should probably use a helper function but cba
+#include <iostream>
+#include <vector>
+
+#include "ttt-functions.h"
+
+int main(int argc, char *argv[]) {
+  // std::vector(3, 0) == [0, 0, 0]
+  // std::vector(3, [0, 0, 0]) == [0, 0, 0] * 3 (a 3x3 matrix, kind of)
+  std::vector<std::vector<int>> board(3, std::vector<int>(3, 0));
+  int moves = 1;
+  int A_input, B_input;
+
+  while (moves < 10) {
+    bool made_move = false;
+    std::cout << "Move " << moves << "\n";
+
+    // ========== A ==========
+    while (!made_move) {
+      std::cout
+          << "You are player A. You are assigned 'O'. Choose a position. "
+             "E.g., 11 for row 1, element 1. 22 for row 2, element 2. 33 for "
+             "row 3, element 3.\n-> ";
+      std::cin >> A_input;
+
+      int row = A_input / 10;
+      int col = A_input % 10;
+
+      if (row < 1 || row > 3 || col < 1 || col > 3) {
+        std::cout << "Out of range. Try again.\n";
+        continue;
+      }
+
+      if (board[row - 1][col - 1] != 0) {
+        std::cout << "This square is occupied. Try again.\n";
+        continue;
+      }
+      board[row - 1][col - 1] = 1;
+      draw_board(board);
+      if (check_for_win(board)) {
+        std::cout << "A is the winner!\n";
+        return 0;
+      }
+      if (moves == 9) {
+        std::cout << "It's a draw!\n";
+        return 0;
+      }
+      made_move = true;
+      ++moves;
+    }
+
+    made_move = false; // Reset for player B
+
+    // ========== B ==========
+    while (!made_move) {
+      std::cout
+          << "You are player B. You are assigned 'X'. Choose a position. "
+             "E.g., 11 for row 1, element 1. 22 for row 2, element 2. 33 for "
+             "row 3, element 3:\n-> ";
+      std::cin >> B_input;
+
+      int row = B_input / 10;
+      int col = B_input % 10;
+
+      if (row < 1 || row > 3 || col < 1 || col > 3) {
+        std::cout << "Out of range. Try again." << std::endl;
+        continue;
+      }
+
+      if (board[row - 1][col - 1] != 0) {
+        std::cout << "This square is occupied. Try again." << std::endl;
+        continue;
+      }
+      board[row - 1][col - 1] = 2;
+      draw_board(board);
+      if (check_for_win(board)) {
+        std::cout << "B is the winner!" << std::endl;
+        return 0;
+      }
+			made_move = true;
+      ++moves;
+    }
+  }
+  return 0;
+}
+`} language="cpp" className="w-full" />
+		</AccordionContent>
+		</AccordionItem>
+	</Accordion>
