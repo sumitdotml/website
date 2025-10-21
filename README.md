@@ -2,6 +2,9 @@
 
 A minimalistic personal blog and learning documentation website built with Next.js, Tailwind, and TypeScript.
 
+>[!NOTE]
+>**October 21, 2025**: This repo has been archived (& my site has been wiped) because I want to move away from Next.js and Vercel (due to various reasons, but primarily [this](https://x.com/paulbiggar/status/1972731712607047708?s=46)). You are still free to do whatever you want with this code since it works pretty well. But if you're like me, you probably don't wanna touch things Vercel anymore.
+
 ## Want to use this code for your own site?
 
 You are free to copy any part of this repository or even the entire thing. All I ask of you is to star this repository if you found it useful and maybe provide some credit & shoutout if you're feeling kind (but you don't have to if your vibes are not into these) :)
@@ -52,10 +55,3 @@ Some ui components are from [shadcn/ui](https://ui.shadcn.com/docs/):
 - [Accordion](https://ui.shadcn.com/docs/components/accordion)
 - [Separator](https://ui.shadcn.com/docs/components/separator)
 - [Hover Card](https://ui.shadcn.com/docs/components/hover-card)
-
-## To-Do
-
-- [ ] Make the navbar sticky for mobile and make the navbar move its original Y position a little higher and stick to the very top when the user scrolls down
-- [ ] Add a search bar
-- [ ] Add a graph visualization (similar to the [Obsidian graph view](https://help.obsidian.md/Plugins/Graph+view))
-- [ ] Add a "On this page" (like a ToC) section to the top right of the page in the PC version. It should be hidden on mobile.
